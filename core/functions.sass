@@ -1,0 +1,25 @@
+//main: ../charm.sass
+@use 'sass:map'
+@use 'sass:string'
+@use 'maps'
+
+@function get_map($map, $key)
+  @return map.get($map, $key)
+
+@function check_map($map, $key)
+  @if map.has-key($map, $key)
+    @return map.get($map, $key)
+  @else
+    @return $key
+
+@function parse_font_format($url)
+  @if string.slice($url, -4) == ".ttf"
+    @return truetype
+  @else if string.slice($url, -4) == ".otf"
+    @return opentype
+  @else if string.slice($url, -4) == ".eot"
+    @return embedded-opentype
+  @else if string.slice($url, -5) == ".woff"
+    @return woff
+  @else if string.slice($url, -6) == ".woff2"
+    @return woff2

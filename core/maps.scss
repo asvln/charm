@@ -1,0 +1,93 @@
+//main: ../charm.sass
+
+// typography
+$heading-ratios: (
+  "html5":        ("h1":     2em, "h2":   1.5em, "h3":  1.17em, "h4":     1em, "h5":   .83em, "h6":  .67em),
+  "html4":        ("h1":     2em, "h2":   1.5em, "h3":  1.17em, "h4":  1.12em, "h5":   .83em, "h6":  .75em),
+  "linear-small": ("h1":  1.75em, "h2":   1.5em, "h3":  1.25em, "h4":   1.1em, "h5":     1em, "h6":   .8em),
+  "linear":       ("h1":     2em, "h2":  1.75em, "h3":   1.5em, "h4":  1.25em, "h5":   1.1em, "h6":   .8em),
+  "linear-large": ("h1":  2.25em, "h2":     2em, "h3":  1.75em, "h4":   1.5em, "h5":  1.25em, "h6":   .8em),
+  "linear-big":   ("h1":   2.5em, "h2":  2.25em, "h3":     2em, "h4":  1.75em, "h5":   1.5em, "h6": 1.25em),
+  "linear-giant": ("h1":  2.75em, "h2":   2.5em, "h3":  2.25em, "h4":     2em, "h5":    1.75, "h6":  1.5em),
+  "minor2":       ("h1": 1.383em, "h2": 1.296em, "h3": 1.215em, "h4": 1.138em, "h5": 1.067em, "h6": .937em),
+  "major2":       ("h1": 1.802em, "h2": 1.602em, "h3": 1.424em, "h4": 1.266em, "h5": 1.125em, "h6": .889em),
+  "minor3":       ("h1": 2.488em, "h2": 2.074em, "h3": 1.728em, "h4":  1.44em, "h5":   1.2em, "h6": .833em),
+  "major3":       ("h1": 3.052em, "h2": 2.441em, "h3": 1.953em, "h4": 1.563em, "h5":  1.25em, "h6":   .8em),
+  "perfect4":     ("h1": 4.209em, "h2": 3.157em, "h3": 2.369em, "h4": 1.777em, "h5": 1.333em, "h6":  .75em),
+  "aug4":         ("h1": 5.653em, "h2": 3.998em, "h3": 2.827em, "h4": 1.999em, "h5": 1.414em, "h6": .707em),
+  "perfect5":     ("h1": 7.594em, "h2": 5.063em, "h3": 3.375em, "h4":  2.25em, "h5":   1.5em, "h6": .667em),
+  "golden":       ("h1": 6.854em, "h2": 4.236em, "h3": 2.618em, "h4": 1.618em, "h5": 1.081em, "h6": .809em),
+);
+
+$line-heights: (
+  "golden":    1.618,
+);
+
+$font-weights: (
+  "thin":        100,
+  "ultra-light": 100,
+  "extra-light": 200,
+  "light":       300,
+  "regular":     400,
+  "medium":      500,
+  "semi-bold":   600,
+  "bold":        700,
+  "thick":       800,
+  "extra-bold":  800,
+  "ultra-bold":  900,
+  "black":       900,
+);
+
+// breakpoints
+$breakpoint-widths: (
+  // sizes
+  "small":             400px,
+  "medium":            600px,
+  "large":             900px,
+  "big":              1200px,
+  "giant":            1800px,
+  // devices
+  "phone":             400px,
+  "tablet-portrait":   600px,
+  "tablet-landscape":  900px,
+  "desktop":          1200px,
+);
+
+// flex
+$flex-positions: (
+  "between": space-between,
+  "around":  space-around,
+  "start":   flex-start,
+  "left":    flex-start,
+  "top":     flex-start,
+  "end":     flex-end,
+  "right":   flex-end,
+  "bottom":  flex-end,
+  "base":    baseline,
+);
+
+$flex-values: (
+  "fill":    1,
+  "shrink":  0,
+);
+
+// block
+$z-hotel: (
+  // html
+  "splash":      200,
+  "fixed":       150,
+  // hotel
+  "sky":         100,
+  "roof":         90,
+  "eighth":       80,
+  "seventh":      70,
+  "sixth":        60,
+  "fifth":        50,
+  "fourth":       40,
+  "third":        30,
+  "second":       20,
+  "first":        10,
+  "lobby":         0,
+  "basement":    -10,
+  "underground": -20,
+);

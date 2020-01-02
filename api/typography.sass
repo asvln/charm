@@ -1,0 +1,70 @@
+//main: ../charm.sass
+@use '../core/mixins'
+@use '../core/maps'
+
+// heading ratio
+= set-heading-ratio($ratio: html5)
+  +mixins.assign-heading-ratio($ratio)
+
+// line heights
+= set-line-heights($heading: 1.5, $text: $heading, $input: 1.15, $button: 1.2)
+  +headings
+    +line-height($heading)
+  +texts
+    +line-height($text)
+  +inputs
+    +line-height($input)
+  +buttons
+    +line-height($button)
+
+= line-height($height)
+  line-height: check_map(maps.$line-heights, #{$height})
+
+// font weights
+= set-font-weights($heading: bold, $text: regular, $input: $text, $button: $input)
+  +headings
+    +font-weight($heading)
+  +texts
+    +font-weight($text)
+  +inputs
+    +font-weight($input)
+  +buttons
+    +font-weight($button)
+
+= font-weight($weight)
+  font-weight: check_map(maps.$font-weights, #{$weight})
+
+// font response
+= font-response($start: 48rem, $end: 120em)
+  // 1em @ 48em (768px) -> 2em @ 120em (1920px)
+  @media (min-width: $start)
+    :root
+      font-size: calc(1rem + ((1vw - .48rem) * 1.389))
+  @media (min-width: $end)
+    :root
+      font-size: 2rem
+
+// font family
+= font-family($family: null, $type: null)
+  @if $family != null
+    @if ($type == null or $type == (sans or sans-serif))
+      font-family: "#{$family}", Helvetica, sans-serif
+    @else if $type == serif
+      font-family: "#{$family}", times, serif
+    @else if $type == monospace or mono
+      font-family: "#{$family}", courier, monospace
+  @else
+      font-family: sans-serif
+
+// font face
+= font-face($family, $weight, $url, $style: normal)
+  @font-face
+    font-family: $family
+    font-style: $style
+    font-weight: $weight
+    src: url("#{$url}") format("#{parse_font_format($url)}")
+
+// type tools
+= reverse-indent($amount: .62em)
+  padding-left: $amount
+  text-indent: -$amount

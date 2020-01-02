@@ -1,0 +1,47 @@
+//main: ../charm.sass
+@use 'sass:map'
+@use './maps'
+
+// block
+= block-position($top: null, $right: null, $bottom: null, $left: null)
+  @if $top == null
+  @else if $top == top
+    top: 0
+    right: 0
+    left: 0
+  @else if $top == right
+    top: 0
+    right: 0
+    bottom: 0
+  @else if $top == bottom
+    right: 0
+    bottom: 0
+    left: 0
+  @else if $top == left
+    bottom: 0
+    left: 0
+    top: 0
+  @else
+    top: $top
+    right: $right
+    bottom: $bottom
+    left: $left
+
+// font
+= assign-heading-ratio($ratio: html5)
+  $ratio-map: map.get(maps.$heading-ratios, $ratio)
+  +assign-heading-sizes($ratio-map...)
+
+= assign-heading-sizes($h1: 2.00em, $h2: 1.50em, $h3: 1.17em, $h4: 1em, $h5: .83em, $h6: .67em)
+  h1
+    font-size: $h1
+  h2
+    font-size: $h2
+  h3
+    font-size: $h3
+  h4
+    font-size: $h4
+  h5
+    font-size: $h5
+  h6
+    font-size: $h6

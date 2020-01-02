@@ -1,0 +1,22 @@
+//main: ../charm.sass
+@use '../core/mixins'
+@use '../core/maps'
+
+// block
+= block($position: null, $top: null, $right: null, $bottom: null, $left: null)
+  display: block
+  position: $position
+  +mixins.block-position($top, $right, $bottom, $left)
+
+= inline-block($position: null, $top: null, $right: null, $bottom: null, $left: null)
+  display: inline-block
+  position: $position
+  +mixins.block-position($top, $right, $bottom, $left)
+
+// block tools
+= z-index($index)
+  z-index: check_map(maps.$z-hotel, $index)
+
+= underline($color: black, $height: 1px, $width: 100%)
+  width: $width
+  border-bottom: $height solid $color

@@ -1,0 +1,42 @@
+//main: ../lib.sass
+@use '../core/mixins'
+@use '../core/maps'
+
+// flexbox
+= flexbox($direction: row, $wrap: wrap, $justify-content: null, $align-items: null, $align-content: null)
+  display: flex
+  flex-direction: $direction
+  flex-wrap: $wrap
+  justify-content: check_map(maps.$flex-positions, $justify-content)
+  align-items: check_map(maps.$flex-positions, $align-items)
+  align-content: check_map(maps.$flex-positions, $align-content)
+
+// flat
+= flat($justify: null, $align: null)
+  +flexbox(row, nowrap, $justify, $align)
+
+= flat-reverse($justify: null, $align: null)
+  +flexbox(row-reverse, nowrap, $justify, $align)
+
+= flat-wrap($justify: null, $align: null, $content: null)
+  +flexbox(row, wrap, $justify, $align, $content)
+
+= flat-reverse-wrap($justify: null, $align: null, $content: null)
+  +flexbox(row-reverse, wrap, $justify, $align, $content)
+
+// stack
+= stack($justify: null, $align: null)
+  +flexbox(column, nowrap, $justify, $align)
+
+= stack-reverse($justify: null, $align: null)
+  +flexbox(column-reverse, nowrap, $justify, $align)
+
+= stack-wrap($justify: null, $align: null, $content: null)
+  +flexbox(column, wrap, $justify, $align, $content)
+
+= stack-reverse-wrap($justify: null, $align: null, $content: null)
+  +flexbox(column-reverse, wrap, $justify, $align, $content)
+
+// flex
+= flex($value: initial)
+  flex: check_map(maps.$flex-values, $value)

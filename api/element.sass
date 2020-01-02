@@ -1,0 +1,17 @@
+//main: ../charm.sass
+@use '../core/mixins'
+
+// fix
+= fix($element, $location: top, $size: 3em)
+  :root
+    margin-#{$location}: $size
+  #{$element}
+    display: block
+    position: fixed
+    +mixins.block-position($location)
+    +z-index(fixed)
+    @if $location == (top or bottom)
+      height: $size
+    @else if $location == (left or right)
+      width: $size
+    @content

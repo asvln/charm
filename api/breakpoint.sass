@@ -3,8 +3,12 @@
 
 // breakpoint
 = breakpoint($width, $limit)
-  @media (#{$limit}-width: check_map(maps.$breakpoint-widths, $width))
-    @content
+  @if $limit == min
+    @media (#{$limit}-width: check_map(maps.$breakpoint-widths, $width))
+      @content
+  @else if $limit == max
+    @media (#{$limit}-width: (check_map(maps.$breakpoint-widths, $width) - 1))
+      @content
 
 // device orientation
 = landscape
@@ -21,30 +25,25 @@
     @content
 
 = to($width)
-  +breakpoint($width, max)
+  +breakpoint(($width - 1), max)
     @content
 
 // hide
+= hide-to($width, $display: block)
+  display: none
+  +breakpoint($width, min)
+    display: $display
+
+= show-at($args...)
+  +hide-to($args...)
+
 = hide-at($width, $display: block)
   display: $display
   +breakpoint($width, min)
     display: none
 
-= hide-to($width, $display: block)
-  display: none
-  +breakpoint($width, max)
-    display: $display
-
-// show
-= show-at($width, $display: block)
-  display: none
-  +breakpoint($width, min)
-    display: $display
-
-= show-to($width, $display: block)
-  display: $display
-  +breakpoint($width, max)
-    display: none
+= show-to($args...)
+  +hide-at($args...)
 
 // scroll
 = scroll-at($height: null)

@@ -1,34 +1,40 @@
 ## Maps
 
 #### $heading-ratios
-```sass
-// html defaults
+```bash
+# html defaults
 html5
 html4
-// linear
+# linear
 linear-small
 linear
+linear-medium
 linear-large
-linear-giant
-// pentatonic
+# pentatonic
 minor2
 major2
 minor3
 major3
 perfect4
 aug4
+dim5
 perfect5
-// golden ratio
+dim6
+# golden ratio
 golden
+golden-large
 ```
 
 #### $line-heights
-```sass
-golden:    1.618,
+```bash
+concise:   1.374,
+html5:     1.4,
+bootstrap: 1.4285714286,
+golden:    1.6180339888,
 ```
 
 #### $font-weights
-```sass
+```bash
 thin:        100,
 ultra-light: 100,
 extra-light: 200,
@@ -44,27 +50,27 @@ black:       900,
 ```
 
 #### $viewport-sizes
-```sass
-// widths
+```bash
+# widths
 small:            400px,
 medium:           600px,
 large:            900px,
 desktop:         1200px,
 giant:           1800px,
-// device width aliases
+# device width aliases
 phone:            400px,
 tablet-portrait:  600px,
 tablet-landscape: 900px,
 ```
 
 #### $media-features
-```sass
+```bash
 max: max-width,
 min: min-width,
 ```
 
 #### $flex-positions
-```sass
+```bash
 between:    space-between,
 around:     space-around,
 start:      flex-start,
@@ -77,13 +83,13 @@ base:       baseline,
 ```
 
 #### $flex-values
-```sass
+```bash
 fill:       1,
 shrink:     0,
 ```
 
 #### $z-hotel
-```sass
+```bash
 splash:        200,
 fixed:         150,
 sky:           100,

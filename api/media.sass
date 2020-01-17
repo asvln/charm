@@ -1,0 +1,33 @@
+//main: ../charm.sass
+@use "sass:string"
+@use '../core/maps'
+
+// @media
+= media($feature, $value, $type: screen)
+  @if $value == (portrait or landscape)
+    @media (orientation: #{$value})
+      @content
+  @else if $value == hover
+    @media (hover: hover)
+      @content
+  @else if $value == color
+    @media (color)
+      @content
+  @else
+    @media #{$type} and (#{check_map(maps.$media-features, $feature)}: check_map(maps.$viewport-sizes, $value))
+      @content
+
+= hide($args...)
+  +media($args...)
+    display: none
+
+// scrolling
+= scroll($break: null, $direction: height)
+  @if $break != null
+    #{$direction}: $break
+    @if $direction == height
+      overflow-y: scroll
+    @else if $direction == width
+      overflow-x: scroll
+  @else
+    overflow: scroll

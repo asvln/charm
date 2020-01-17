@@ -46,16 +46,21 @@ black:       900,
 #### $viewport-sizes
 ```sass
 // widths
-small:             400px,
-medium:            600px,
-large:             900px,
-desktop:          1200px,
-giant:            1800px,
+small:            400px,
+medium:           600px,
+large:            900px,
+desktop:         1200px,
+giant:           1800px,
 // device width aliases
-phone:             400px,
-tablet-portrait:   600px,
-tablet-landscape:  900px,
-desktop:          1200px,
+phone:            400px,
+tablet-portrait:  600px,
+tablet-landscape: 900px,
+```
+
+#### $media-features
+```sass
+max: max-width,
+min: min-width,
 ```
 
 #### $flex-positions

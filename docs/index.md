@@ -5,7 +5,7 @@
 - [Flex](api/flex.md)
 - [Block](api/block.md)
 - [Element](api/element.md)
-- [Breakpoint](api/breakpoint.md)
+- [Media](api/media.md)
 
 ### Core
 - [Maps](core/maps.md)

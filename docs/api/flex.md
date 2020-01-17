@@ -1,24 +1,24 @@
 ## Flexbox
 
-#### flexbox
+### flexbox
 Quickly define and position `display: flexbox`
 ```sass
-// flexbox($direction: row, $wrap: wrap, $justify-content: null, $align-items: null, $align-content: null)
+// flexbox($direction: row, $wrap, $justify-content, $align-items, $align-content)
 // default: 'display: flex'
-+flexbox(row, nowrap, around, center)
++flexbox(row, wrap, around, center, end)
 ```
 
-##### Flex Positioning
+#### $flex-positioning
 `justify-content`, `align-items`, and `align-content` values.
 ```bash
-flex-start    | start   | top       | left
-flex-end      | end     | bottom    | right
+flex-start    | start   | top     | left
+flex-end      | end     | bottom  | right
 space-between | between
 space-around  | around
-baseline      | base
+
 ````
 
-#### flat
+### flat
 `flexbox(row)`
 ```sass
 // flat($justify-content: null, $align-items: null)
@@ -35,7 +35,7 @@ baseline      | base
 
 ```
 
-#### stack
+### stack
 `flexbox(column)`
 ```sass
 // stack($justify-content: null, $align-items: null)
@@ -69,7 +69,7 @@ section
   +flex(auto)
 ```
 
-##### Flex Aliases
+#### $flex
 ```bash
 fill:   1
 shrink: 0

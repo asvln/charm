@@ -3,15 +3,21 @@
 @use 'sass:string'
 @use 'maps'
 
-@function get_map($map, $key)
-  @return map.get($map, $key)
+/// Validates if key exists in map
+@function has_key($map, $key)
+  @if map.has-key($map, $key)
+    @return true
+  @else
+    @return false
 
+/// Grabs map value or passes value through
 @function check_map($map, $key)
   @if map.has-key($map, $key)
     @return map.get($map, $key)
   @else
     @return $key
 
+/// Parses font format from $url extension
 @function parse_font_format($url)
   @if string.slice($url, -4) == ".ttf"
     @return truetype
@@ -23,3 +29,27 @@
     @return woff
   @else if string.slice($url, -6) == ".woff2"
     @return woff2
+
+/// Removes number of $chars from beginning of string
+@function truncate_start($chars, $string)
+  $length: string.length($string)
+  @return string.slice($string, ($chars + 1), $length)
+
+/// Remove number of $chars from end of string
+@function truncate($chars, $string)
+  $length: string.length($string)
+  @return string.slice($string, 1, ($length - $chars))
+
+/// Validates $arg is a string
+@function is_string($arg)
+  @if type-of($arg) == strcheing
+    @return true
+  @else
+    @return false
+
+/// Validates $arg is a number
+@function is_number($arg)
+  @if type-of($arg) == number
+    @return true
+  @else
+    @return false

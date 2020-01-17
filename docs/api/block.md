@@ -20,18 +20,53 @@ div
   +inline-block(relative)
 ```
 
-## Block Tools
+#### inline
+define and position `display: inline`
+```sass
+// inline($position: null, $top: null, $right: null, $bottom: null, $left: null)
+// $top single value aliases: (top, right, bottom, left)
+// default: 'display: inline-block'
+div
+  +inline(relative)
+```
 
-#### z-index
+### Block Positions
+
+#### relative
+define and position a block with `display: relative`
+```sass
+// relative($top: null, $right: null, $bottom: null, $left: null)
+div
+  +relative(1em)
+```
+
+#### absolute
+define and position a block with `display: absolute`
+```sass
+// absolute($top: null, $right: null, $bottom: null, $left: null)
+div
+  +absolute(null, 10px)
+```
+
+#### fixed
+define and position a block with `display: fixed`
+```sass
+// fixed($top: null, $right: null, $bottom: null, $left: null)
+div
+  +fixed
+```
+
+### Block Tools
+#### z
 accepts integer or map value to set `z-index`
 ```sass
-// z-index($index)
+// z($index)
 // default map values based on an 8 floor hotel
 div
-  +z-index(roof)
-  +z-index(90)
-  +z-index(lobby)
-  +z-index(basement)
+  +z(roof)
+  +z(90)
+  +z(lobby)
+  +z(basement)
 ```
 
 #### underline

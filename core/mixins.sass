@@ -1,31 +1,27 @@
 //main: ../charm.sass
 @use 'sass:map'
-@use './maps'
+@use 'maps'
 
 // block
 = block-position($top: null, $right: null, $bottom: null, $left: null)
-  @if $top == null
-  @else if $top == top
-    top: 0
-    right: 0
-    left: 0
+  @if $top == top
+    +assign-block-position(0, 0, null, 0)
   @else if $top == right
-    top: 0
-    right: 0
-    bottom: 0
+    +assign-block-position(0, 0, 0, null)
   @else if $top == bottom
-    right: 0
-    bottom: 0
-    left: 0
+    +assign-block-position(null, 0, 0, 0)
   @else if $top == left
-    bottom: 0
-    left: 0
-    top: 0
+    +assign-block-position(0, null, 0, 0)
+  @else if $top == fill
+    +assign-block-position(0, 0, 0, 0)
   @else
-    top: $top
-    right: $right
-    bottom: $bottom
-    left: $left
+    +assign-block-position($top, $right, $bottom, $left)
+
+= assign-block-position($top: null, $right: null, $bottom: null, $left: null)
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left
 
 // font
 = assign-heading-ratio($ratio: html5)

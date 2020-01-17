@@ -69,10 +69,10 @@ div
   +z(basement)
 ```
 
-#### underline
+#### hr
 creates a custom `border-bottom`
 ```sass
-// underline($color: black, $height: 1px, $width: 100%)
+// hr($color: black, $height: 1px, $width: 100%)
 h1, h2
-  +underline(orange)
+  +hr(orange)
 ```

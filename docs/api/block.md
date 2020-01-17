@@ -1,63 +1,73 @@
 ## Block
+`$top` has single value aliases to place element:
+```sass
+$top: top | right | bottom | left | fill
+```
 
-#### block
+### block
 define and position `display: block`
 ```sass
-// block($position: null, $top: null, $right: null, $bottom: null, $left: null)
-// $top single value aliases: (top, right, bottom, left)
+// block($position, $top, $right, $bottom, $left)
 // default: 'display: block'
 div
   +block(sticky, top)
 ```
 
-#### inline-block
+### inline-block
 define and position `display: inline-block`
 ```sass
-// inline-block($position: null, $top: null, $right: null, $bottom: null, $left: null)
-// $top single value aliases: (top, right, bottom, left)
+// inline-block($position, $top, $right, $bottom, $left)
 // default: 'display: inline-block'
 div
-  +inline-block(relative)
+  +inline-block(relative, 5px, 5px)
 ```
 
-#### inline
+### inline
 define and position `display: inline`
 ```sass
-// inline($position: null, $top: null, $right: null, $bottom: null, $left: null)
-// $top single value aliases: (top, right, bottom, left)
+// inline($position, $top, $right, $bottom, $left)
 // default: 'display: inline-block'
 div
-  +inline(relative)
+  +inline
 ```
 
-### Block Positions
+## Block Positions
 
-#### relative
+### sticky
+define and position a block with `display: sticky`
+```sass
+// sticky($top, $right, $bottom, $left)
+div
+  +sticky(bottom)
+```
+
+### fixed
+define and position a block with `display: fixed`
+```sass
+// fixed($top, $right, $bottom, $left)
+div
+  +fixed(right)
+```
+
+### absolute
+define and position a block with `display: absolute`
+```sass
+// absolute($top, $right, $bottom, $left)
+div
+  +absolute(null, 0, 0)
+```
+
+### relative
 define and position a block with `display: relative`
 ```sass
-// relative($top: null, $right: null, $bottom: null, $left: null)
+// relative($top, $right, $bottom, $left)
 div
   +relative(1em)
 ```
 
-#### absolute
-define and position a block with `display: absolute`
-```sass
-// absolute($top: null, $right: null, $bottom: null, $left: null)
-div
-  +absolute(null, 10px)
-```
+## Block Tools
 
-#### fixed
-define and position a block with `display: fixed`
-```sass
-// fixed($top: null, $right: null, $bottom: null, $left: null)
-div
-  +fixed
-```
-
-### Block Tools
-#### z
+### z
 accepts integer or map value to set `z-index`
 ```sass
 // z($index)
@@ -69,10 +79,10 @@ div
   +z(basement)
 ```
 
-#### hr
+### hr
 creates a custom `border-bottom`
 ```sass
-// hr($color: black, $height: 1px, $width: 100%)
+// hr($color, $height, $width)
 h1, h2
   +hr(orange)
 ```

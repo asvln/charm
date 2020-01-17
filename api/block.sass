@@ -13,7 +13,7 @@
   position: $position
   +mixins.block-position($top, $right, $bottom, $left)
 
-= inline($top: null, $right: null, $bottom: null, $left: null)
+= inline($position: null, $top: null, $right: null, $bottom: null, $left: null)
   display: inline
   position: $position
   +mixins.block-position($top, $right, $bottom, $left)
@@ -32,6 +32,11 @@
 = fixed($top: null, $right: null, $bottom: null, $left: null)
   display: block
   position: fixed
+  +mixins.block-position($top, $right, $bottom, $left)
+
+= sticky($top: null, $right: null, $bottom: null, $left: null)
+  display: block
+  position: sticky
   +mixins.block-position($top, $right, $bottom, $left)
 
 // block tools

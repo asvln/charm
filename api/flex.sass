@@ -3,7 +3,7 @@
 @use '../core/maps'
 
 // flexbox
-= flexbox($direction: row, $wrap: wrap, $justify-content: null, $align-items: null, $align-content: null)
+= flexbox($direction: row, $wrap: null, $justify-content: null, $align-items: null, $align-content: null)
   display: flex
   flex-direction: $direction
   flex-wrap: $wrap
@@ -12,30 +12,30 @@
   align-content: check_map(maps.$flex-positions, $align-content)
 
 // flat
-= flat($justify: null, $align: null)
-  +flexbox(row, nowrap, $justify, $align)
+= flat($justify-content: null, $align-items: null)
+  +flexbox(row, nowrap, $justify-content, $align-items)
 
-= flat-reverse($justify: null, $align: null)
-  +flexbox(row-reverse, nowrap, $justify, $align)
+= flat-reverse($justify-content: null, $align-items: null)
+  +flexbox(row-reverse, nowrap, $justify-content, $align-items)
 
-= flat-wrap($justify: null, $align: null, $content: null)
-  +flexbox(row, wrap, $justify, $align, $content)
+= flat-wrap($justify-content: null, $align-items: null, $align-content: null)
+  +flexbox(row, wrap, $justify-content, $align-items, $align-content)
 
-= flat-reverse-wrap($justify: null, $align: null, $content: null)
-  +flexbox(row-reverse, wrap, $justify, $align, $content)
+= flat-reverse-wrap($justify-content: null, $align-items: null, $align-content: null)
+  +flexbox(row-reverse, wrap, $justify-content, $align-items, $align-content)
 
 // stack
-= stack($justify: null, $align: null)
-  +flexbox(column, nowrap, $justify, $align)
+= stack($justify-content: null, $align-items: null)
+  +flexbox(column, nowrap, $justify-content, $align-items)
 
-= stack-reverse($justify: null, $align: null)
-  +flexbox(column-reverse, nowrap, $justify, $align)
+= stack-reverse($justify-content: null, $align-items: null)
+  +flexbox(column-reverse, nowrap, $justify-content, $align-items)
 
-= stack-wrap($justify: null, $align: null, $content: null)
-  +flexbox(column, wrap, $justify, $align, $content)
+= stack-wrap($justify-content: null, $align-items: null, $align-content: null)
+  +flexbox(column, wrap, $justify-content, $align-items, $align-content)
 
-= stack-reverse-wrap($justify: null, $align: null, $content: null)
-  +flexbox(column-reverse, wrap, $justify, $align, $content)
+= stack-reverse-wrap($justify-content: null, $align-items: null, $align-content: null)
+  +flexbox(column-reverse, wrap, $justify-content, $align-items, $align-content)
 
 // flex
 = flex($value: initial)

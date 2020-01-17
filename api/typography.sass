@@ -61,7 +61,7 @@
   @font-face
     font-family: $family
     font-style: $style
-    font-weight: $weight
+    font-weight: check_map(maps.$font-weights, $weight)
     src: url("#{$url}") format("#{parse_font_format($url)}")
 
 // type tools

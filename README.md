@@ -1,9 +1,11 @@
-## Charm - Atomic Sass Framework
+## Charm - Sass Framework
 <p align="center">
   <img height="100" src="docs/images/charm.svg">
 </p>
 
-**Charm** has a [concise API](docs/index.md) to make your stylesheets easily maintainable.
+**Charm** adds a new, expressive language to your stylesheets while providing quick access to many common stylings.
+
+This is accomplished through a [concise API](docs/index.md) which make your stylesheets easily readable and maintainable.
 
 - Typographic layouts
 - Flexbox implementation
@@ -16,7 +18,7 @@ Built-in resets standardize results across all browsers, this includes completel
   <img height="58" src="docs/images/select-arrow.png">
 </p>
 
-**Charm** provides a [pleasing and extensible default styling](https://charmingsass.com/defaults.html).
+**Charm** comes with a [pleasing and extensible default styling](https://charmingsass.com/defaults.html).
 
 #### Sample Usage
 ```sass
@@ -24,14 +26,14 @@ Built-in resets standardize results across all browsers, this includes completel
 
 +set-heading-ratio(minor3)
 +set-line-heights(1.55em)
-+set-font-weights(semi-bold, regular)
++set-font-weights(semi-bold, thin)
 
 +fix(header, top, 5em)
   +flat(between, center)
 
 body
   font-size: 1em
-  +font-family(Raleway, sans)
+  +font-family(Raleway)
 
 +headings
   margin: 1rem
@@ -39,16 +41,15 @@ body
 
 section
   +stack(between)
-  +at(small)
+  +media(min, small)
     +flat-wrap(around, center)
-  a
+  p
     font-size: .9em
-    +at(small)
+    +media(landscape)
       font-size: 1.1em
 
 article
-  +scroll_at(5em)
-
+  +scroll(5em)
 ```
 
 ## Installation
@@ -74,14 +75,10 @@ git clone https://github.com/asvln/charm
 ### .css
 1. Download [`charm.min.css`](https://github.com/asvln/charm/blob/master/css/charm.min.css)
 
-```bash
-curl -L https://github.com/asvln/charm/blob/master/css/charm.min.css
-````
-
 2. Import the .css file
 
 ```html
-<link rel="stylesheet" href="charm.min.css">
+<link rel="stylesheet" href="css/charm.min.css">
 ```
 
 
@@ -95,6 +92,8 @@ Documentation can be found in `charm/docs`
 - Grid system
 - Specialized elements
 - Class implementations
+
+API will be stable upon v1.0.0 release.
 
 ## License
 This project is licensed under the MIT License

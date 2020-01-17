@@ -1,4 +1,4 @@
-/* Charm v0.1.0 | MIT License | github.com/asvln/charm */
+/* Charm v0.1.1 | MIT License | github.com/asvln/charm */
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -117,12 +117,6 @@ img {
   border-style: none;
 }
 
-img,
-video {
-  height: auto;
-  max-width: 100%;
-}
-
 iframe {
   border: 0;
 }
@@ -174,8 +168,9 @@ select {
   appearance: none;
   text-transform: none;
   padding-right: 30px !important;
-  background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='12' height='12' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='black'/></g></svg>") no-repeat !important;
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgMTUgMTUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE1IDE1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGQ9Ik0xNC44LDQuMWMtMC4zLTAuMy0wLjUtMC4yLTAuOCwwLjFjLTIuMSwyLjEtNC4zLDQuMy02LjQsNi40YzAsMC0wLjEsMC4xLTAuMSwwLjFjMCwwLTAuMS0wLjEtMC4xLTAuMQoJQzUuMyw4LjQsMy4xLDYuMywxLDQuMkMwLjksNCwwLjcsNCwwLjYsMy45Yy0wLjEsMC0wLjMsMC0wLjQsMC4yQy0wLjEsNC40LDAsNC43LDAuMiw0LjljMi4zLDIuMyw0LjYsNC42LDYuOCw2LjhsMCwwYzAsMCwwLDAsMCwwCgljMC4zLDAuMywwLjYsMC4zLDAuOSwwYzIuMy0yLjMsNC41LTQuNiw2LjgtNi44QzE1LDQuNywxNS4xLDQuNCwxNC44LDQuMXoiLz4KPC9zdmc+Cg==") no-repeat !important;
   background-position: right 10px top 55% !important;
+  background-size: 0.7em !important;
 }
 
 label > [type=checkbox],
@@ -396,7 +391,7 @@ body {
   display: block;
   width: 100%;
   min-height: 100%;
-  font-family: "Raleway", Helvetica, sans-serif;
+  font-family: "Helvetica", Helvetica, sans-serif;
 }
 body h1,
 body h2,

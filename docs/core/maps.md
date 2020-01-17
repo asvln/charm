@@ -43,15 +43,15 @@ ultra-bold:  900,
 black:       900,
 ```
 
-#### $breakpoints
+#### $viewport-sizes
 ```sass
-// size
-tiny:              400px,
-small:             600px,
-medium:            900px,
-large:            1200px,
+// widths
+small:             400px,
+medium:            600px,
+large:             900px,
+desktop:          1200px,
 giant:            1800px,
-// device sizes
+// device width aliases
 phone:             400px,
 tablet-portrait:   600px,
 tablet-landscape:  900px,

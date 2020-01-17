@@ -39,18 +39,22 @@ $font-weights: (
 );
 
 // breakpoints
-$breakpoint-widths: (
-  // sizes
-  "small":             400px,
-  "medium":            600px,
-  "large":             900px,
-  "big":              1200px,
-  "giant":            1800px,
-  // devices
-  "phone":             400px,
-  "tablet-portrait":   600px,
-  "tablet-landscape":  900px,
-  "desktop":          1200px,
+$viewport-sizes: (
+  // widths
+  "small":            400px,
+  "medium":           600px,
+  "large":            900px,
+  "desktop":         1200px,
+  "giant":           1800px,
+  // device width aliases
+  "phone":            400px,
+  "tablet-portrait":  600px,
+  "tablet-landscape": 900px,
+);
+
+$media-features: (
+  "max": max-width,
+  "min": min-width,
 );
 
 // flex

@@ -1,0 +1,29 @@
+//main: ../charm.sass
+@use '../core/maps'
+
+// @media
+= media($feature, $value: null, $type: screen)
+  $is_color: $feature == color
+  $is_hover: $feature == hover
+  $is_limit: map-has-key(maps.$media-limits, $feature)
+
+  @if $is_color
+    @media (color)
+      @content
+
+  @else if $is_hover
+    @media (hover: hover)
+      @content
+
+  @else if $is_limit
+    $limit: map-get(maps.$media-limits, $feature)
+    $breakpoint: map-grab(maps.$viewport-sizes, $value)
+    @media #{$type} and (#{$limit}: $breakpoint)
+      @content
+
+  @else
+    @warn "Invalid media query #{$feature}"
+
+= hide($args...)
+  +media($args...)
+    display: none

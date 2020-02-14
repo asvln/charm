@@ -1,0 +1,146 @@
+//main: charm.sass
+
+// typographic declarations
++set-heading-ratio
++set-line-heights(1.62)
++set-font-weights
+
+// html, body, main
+html
+  box-sizing: border-box
+  font-size: 1rem
+  -webkit-text-size-adjust: 100%
+
+body
+  display: block
+  width: 100%
+  min-height: 100%
+  +font-family(Helvetica)
+  +headings
+    margin: .82rem, 0
+
+main
+  width: 100%
+
++headings
+  margin: .5em 0
+
+// blocks
+hr
+  margin: .5em 0
+  border-top: .01em solid black
+  border-left: none
+  border-right: none
+  border-bottom: none
+
+// text-blocks
+blockquote
+  font-size: .98em
+  padding: 1.2em 1.5em .5em
+  background-color: rgba(186, 186, 186, 0.2)
+  cite
+    display: block
+    font-size: .85em
+    text-align: right
+    padding: .2em
+
+pre
+  font-size: 1em
+
+// text-inline
+mark
+  padding: .2em
+  border-radius: .1em
+
+// lists
+ol, ul
+  margin: 0 0 0 1em
+  ol, ul
+    margin: 0
+
+// definitions
+dl
+  margin: 1em
+  dt
+    padding-left: 0
+  dd
+    padding-left: .8em
+    /* &:before
+      content: '\2022\0020' */
+
+// tables
+table
+  margin-bottom: .8em
+  font-size: 1em
+thead
+  th
+    padding: .3em
+    border-left: .01em solid black
+    border-top: .01em solid black
+    border-right: .01em solid black
+    border-bottom: none
+tbody
+  td
+    padding: .5em
+    border: .01em solid black
+    overflow: hidden
+tfoot
+  th
+    border-left: .01em solid black
+    border-bottom: .01em solid black
+    border-right: .01em solid black
+    font-size: .81em
+    padding: .5em
+
+// fieldsets
+fieldset
+  margin: .8em 0
+  border: 1px solid #d1d1d1
+  border-radius: 0.25em
+
+legend
+  color: #444444
+  font-size: .92em
+  font-weight: 500
+
+// inputs
+label
+  margin: .2em 0
+
+label, textarea
+  display: block
+
+label > [type="checkbox"],
+label > [type="radio"]
+  margin-right: .2em
+
++inputs
+  display: block
+  min-width: 26ch
+  padding: .5em .68em
+  background: #fff
+  border: 1px solid #d1d1d1
+  border-radius: .25em
+  box-shadow: none
+  &:focus
+    border: 1px solid #9a9a9a
+
+
+input, textarea, select
+  margin-bottom: .8em
+
+// buttons
++buttons
+  border: 1px solid #787878
+  border-radius: .25em
+  background: #fff
+  color: black
+  padding: .25em 1.2em
+  margin-bottom: .5rem
+  text-align: center
+  cursor: pointer
+  line-height: 1.62em
+  &:hover
+    background: #f0f0f0
+  &:active
+    background: #e8e8e8

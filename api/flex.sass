@@ -1,0 +1,37 @@
+//main: ../charm.sass
+@use '../core/maps'
+
+// flexbox
+= flexbox($direction: row, $wrap: null, $justify-content: null, $align-items: null, $align-content: null)
+  display: flex
+  flex-direction: $direction
+  flex-wrap: $wrap
+  justify-content: map-grab(maps.$flex-positions, $justify-content)
+  align-items: map-grab(maps.$flex-positions, $align-items)
+  align-content: map-grab(maps.$flex-positions, $align-content)
+
+// row
+= row($justify-content: null, $align-items: null)
+  +flexbox(row, nowrap, $justify-content, $align-items)
+
+= row-reverse($justify-content: null, $align-items: null)
+  +flexbox(row-reverse, nowrap, $justify-content, $align-items)
+
+= row-wrap($justify-content: null, $align-items: null, $align-content: null)
+  +flexbox(row, wrap, $justify-content, $align-items, $align-content)
+
+= row-reverse-wrap($justify-content: null, $align-items: null, $align-content: null)
+  +flexbox(row-reverse, wrap, $justify-content, $align-items, $align-content)
+
+// col
+= col($justify-content: null, $align-items: null)
+  +flexbox(column, nowrap, $justify-content, $align-items)
+
+= col-reverse($justify-content: null, $align-items: null)
+  +flexbox(column-reverse, nowrap, $justify-content, $align-items)
+
+= col-wrap($justify-content: null, $align-items: null, $align-content: null)
+  +flexbox(column, wrap, $justify-content, $align-items, $align-content)
+
+= col-reverse-wrap($justify-content: null, $align-items: null, $align-content: null)
+  +flexbox(column-reverse, wrap, $justify-content, $align-items, $align-content)

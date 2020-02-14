@@ -1,0 +1,76 @@
+//main: ../charm.sass
+@use '../core/maps'
+
+// display
+= block($position: null, $offset: null)
+  display: block
+  position: $position
+  +offset($offset)
+
+= inline-block($position: null, $offset: null)
+  display: inline-block
+  position: $position
+  +offset($offset)
+
+= inline($position: null, $offset: null)
+  display: inline
+  position: $position
+  +offset($offset)
+
+// position
+= relative($offset: null)
+  position: relative
+  +offset($offset)
+
+= absolute($offset: null)
+  position: absolute
+  +offset($offset)
+
+= fixed($offset: null)
+  position: fixed
+  +offset($offset)
+
+= sticky($offset: null)
+  position: sticky
+  +offset($offset)
+
+= static
+  position: static
+
+// sizing
+= scroll($limit: null, $direction: height)
+  @if $limit != null
+    #{$direction}: $break
+    @if $direction == height
+      overflow-y: scroll
+    @else if $direction == width
+      overflow-x: scroll
+  @else
+    overflow: scroll
+
+// placement
+= offset($args: ())
+  $sides: (top, right, bottom, left)
+  $values: (auto, initial, inherit, unset, 0)
+
+  @each $side in $sides
+    $index: index($args, $side)
+    @if $index
+      @if $index == length($args)
+        #{$side}: 0
+      @else
+        $next: nth($args, $index + 1)
+        @if (is_number($next) and not unitless($next)) or index($values, $next)
+          #{$side}: $next
+        @else if index($sides, $next)
+          #{$side}: 0
+        @else
+          @warn "Invalid `offset` value: #{$next}"
+
+= z($index)
+  z-index: map-grab(maps.$z-indexes, $index)
+
+// styling
+= hr($color: black, $height: 1px, $width: 100%)
+  width: $width
+  border-bottom: $height solid $color

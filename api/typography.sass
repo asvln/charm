@@ -1,0 +1,74 @@
+//main: ../charm.sass
+@use '../core/maps'
+
+// heading ratio
+= set-heading-ratio($ratio: html5)
+  $ratio-map: map-get(maps.$heading-ratios, $ratio)
+  +assign-heading-sizes($ratio-map...)
+
+= assign-heading-sizes($h1: 2.00em, $h2: 1.50em, $h3: 1.17em, $h4: 1em, $h5: .83em, $h6: .67em)
+  h1
+    font-size: $h1
+  h2
+    font-size: $h2
+  h3
+    font-size: $h3
+  h4
+    font-size: $h4
+  h5
+    font-size: $h5
+  h6
+    font-size: $h6
+
+// line heights
+= set-line-heights($heading: 1.5, $text: $heading, $input: 1.15, $button: 1.2)
+  +headings
+    +line-height($heading)
+  +texts
+    +line-height($text)
+  +inputs
+    +line-height($input)
+  +buttons
+    +line-height($button)
+
+= line-height($height)
+  line-height: map-grab(maps.$line-heights, #{$height})
+
+// font weights
+= set-font-weights($heading: bold, $text: regular, $input: $text, $button: $input)
+  +headings
+    +font-weight($heading)
+  +texts
+    +font-weight($text)
+  +inputs
+    +font-weight($input)
+  +buttons
+    +font-weight($button)
+
+= font-weight($weight)
+  font-weight: map-grab(maps.$font-weights, #{$weight})
+
+// font family
+= font-family($family: null, $type: null)
+  @if $family != null
+    @if ($type == null or $type == (sans or sans-serif))
+      font-family: "#{$family}", Helvetica, sans-serif
+    @else if $type == serif
+      font-family: "#{$family}", times, serif
+    @else if $type == monospace or mono
+      font-family: "#{$family}", courier, monospace
+  @else
+      font-family: sans-serif
+
+// font face
+= font-face($family, $weight, $url, $style: normal)
+  @font-face
+    font-family: $family
+    font-style: $style
+    font-weight: map-grab(maps.$font-weights, $weight)
+    src: url("#{$url}") format("#{parse-font-format($url)}")
+
+// type tools
+= reverse-indent($amount: .62em)
+  padding-left: $amount
+  text-indent: -$amount

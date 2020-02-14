@@ -1,0 +1,30 @@
+//main: ../charm.sass
+@use 'maps'
+
+// Grabs map value or else passes value through
+@function map-grab($map, $key)
+  @if map-has-key($map, $key)
+    @return map-get($map, $key)
+  @else
+    @return $key
+
+// Parses font format from $url extension
+@function parse-font-format($url)
+  @if str-slice($url, -4) == ".ttf"
+    @return truetype
+  @else if str-slice($url, -4) == ".otf"
+    @return opentype
+  @else if str-slice($url, -4) == ".eot"
+    @return embedded-opentype
+  @else if str-slice($url, -5) == ".woff"
+    @return woff
+  @else if str-slice($url, -6) == ".woff2"
+    @return woff2
+
+// Validates $arg is a string
+@function is-string($arg)
+  @return (type-of($arg) == 'string')
+
+// Validates $arg is a number
+@function is-number($arg)
+  @return (type-of($arg) == 'number')

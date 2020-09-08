@@ -20,42 +20,44 @@ div
   +flexbox(row, wrap, around, center, end)
 ```
 
-### row
+### flat
 Quickly define `flexbox(row)` and position.
 
 ```sass
-// row($justify-content, $align-items)
+// flat($justify-content, $align-items)
 div
-  +row(between)
+  +flat(between)
 
-// row-reverse($justify-content, $align-items)
+// flat-reverse($justify-content, $align-items)
 div
-  +row-reverse(start)
+  +flat-reverse(start)
 
-// row-wrap($justify-content, $align-items, $align-content)
+// flat-wrap($justify-content, $align-items, $align-content)
 div
-  +row-wrap(center, bottom, bottom)
+  +flat-wrap(center, bottom, bottom)
 
-// row-reverse-wrap($justify-content, $align-items, $align-content)
+// flat-reverse-wrap($justify-content, $align-items, $align-content)
 div
-  +row-reverse-wrap(start, center)
-
+  +flat-reverse-wrap(start, center)
 ```
 
-### col
+### stack
 Quickly define `flexbox(column)` and position.
 
 ```sass
-// col($justify-content, $align-items)
-+col(center)
+// stack($justify-content, $align-items)
+div
+  +stack(center)
 
-// col-reverse($justify-content, $align-items)
-+col-reverse(center)
+// stack-reverse($justify-content, $align-items)
+div
+  +stack-reverse(center)
 
-// col-wrap($justify-content, $align-items, $align-content)
-+col-wrap(between, center, start)
+// stack-wrap($justify-content, $align-items, $align-content)
+div
+  +stack-wrap(between, center, start)
 
-// col-reverse-wrap($justify-content, $align-items, $align-content)
-+col-reverse-wrap(between, start, end)
-
+// stack-reverse-wrap($justify-content, $align-items, $align-content)
+div
+  +stack-reverse-wrap(between, start, end)
 ```

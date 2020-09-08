@@ -6,7 +6,6 @@
 - Simple [typographic](docs/api/typography.md) layouts
 - Single-line [flexbox](docs/api/flex.md) and [block](docs/api/block.md) declarations
 - Intuitive [media queries](docs/api/media.md)
-- Extensible [default styling](https://charmingsass.com/defaults.html)
 - [Resets](https://github.com/asvln/fern) that standardize results across browsers
 
 ## Sample Usage
@@ -26,9 +25,9 @@ body
   +hr
 
 section
-  +col(between)
+  +stack(between)
   +media(min, small)
-    +row-wrap(around, center)
+    +flat-wrap(around, center)
 
 article
   +scroll(5em)
@@ -55,17 +54,6 @@ git clone https://github.com/asvln/charm
 
 ## Documentation
 Documentation can be found in [`charm/docs`](docs/index.md).
-
-## Release Cycle
-API is currently being developed and there may be breaking changes. It is currently considered beta for requests, commentary, and contributions.
-
-## Sponsor
-[Sponsors](https://patreon.com/charmingsass) help support the creation of new features such as...
-
-- Animations
-- Color scheming
-- Grid Implementation
-- Specialized components
 
 ## License
 This project is licensed under the MIT License
